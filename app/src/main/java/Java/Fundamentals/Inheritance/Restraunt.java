@@ -30,11 +30,6 @@ public class Restraunt {
         else
         {
             this.revList.add(restyRev + starString);// add the string review to the list
-//            this.revList.add(starString);
-//            int starSum = 0;
-//            for
-
-
         }
         return revList;// return arr list
     }
