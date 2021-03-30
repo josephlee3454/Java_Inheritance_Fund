@@ -11,7 +11,7 @@ public class RestrauntTest {
     @Test public void testRestClass(){
         arr.add("this thing sucks ass");
 
-        Restraunt test1 = new Restraunt("joes", 2,5,arr);
+        Restraunt test1 = new Restraunt("joes",5);
 
         System.out.println(test1.getName());
         assertEquals( "joes", test1.getName());
@@ -26,12 +26,10 @@ public class RestrauntTest {
     }
 
     @Test public void testRevList (){
-        arr.add("this thing sucks ass");
-        Restraunt test2 = new Restraunt("joes", 2,5,arr);
-//        assertEquals(arr,test2.addRev("this thing sucks ass"));
-        System.out.println(test2.addRev("this thing sucks ass",3));
-        assertEquals("the Restraunt name is joes the reating is 3  stars !!!! the price category is 5 the review is [this thing sucks ass Stars are  3]", test2.toString());
 
+        Restraunt test2 = new Restraunt("joes",4);
+        test2.addRev("joe","so goodd", 2);
+        assertEquals(2,test2.avgStar, 1);
     }
 
 

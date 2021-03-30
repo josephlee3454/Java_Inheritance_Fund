@@ -4,26 +4,26 @@ package Java.Fundamentals.Inheritance;
 
 public class Shop {
     public String name;
-    public String Description;
+    public String Desc;
     public int dollNum;
 
 
-    public Shop(String name, String description, int dollNum){
+    public Shop(String name, String Desc, int dollNum){
         this.name = name;
-        this.Description = Description;
+        this.Desc = Desc;
         this.dollNum = dollNum;
     }
 
     public String toString(){
-        return String.format("welcome to %s this restraunt is %s the price %d dollars", this.name, this.Description, this.dollNum );
+        return String.format("welcome to %s this restraunt is %s the price %d dollars", this.name, this.Desc, this.dollNum );
     }
 
     public String getName(){
         return this.name;
     }
 
-    public String retDesc(){
-        return this.Description;
+    public String getDesc(){
+        return this.Desc;
     }
     public int retDollNum(){
         return this.dollNum;

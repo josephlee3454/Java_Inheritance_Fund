@@ -4,35 +4,35 @@ import java.util.*;
 
 public class Restraunt {
     String name;
+    int numRevs;
+    int sumStars;
+    double avgStar;
     int stars;
     int priceCat;
-    ArrayList<String> revList;
+    ArrayList<Review> revList = new ArrayList<Review>();
 
-    public Restraunt(String  name, int stars, int priceCat, ArrayList revList ){
-            this.name = name;
-            this.stars = stars;
-            this.priceCat = priceCat;
-            this.revList = new ArrayList<String>();
-
-
-
-
+    public Restraunt(String name, int priceCat) {
+        this.name = name;
+        this.priceCat = priceCat;
     }
 
-    public ArrayList addRev(String restyRev, int star){
-        this.stars = star;
-        String starString = String.format(" Stars are  %d",this.stars);
 
-        if(this.revList != null && this.revList.contains(restyRev)){// we check to see if its not empty so we dont have to use contains for no reason
-            //we then check the array list that has been intilized throught the rev class to see if it contains the body "review"
-            System.out.println("its here stupidhead "); // messge if it exists
-        }
-        else
-        {
-            this.revList.add(restyRev + starString);// add the string review to the list
-        }
-        return revList;// return arr list
+
+    public void addRev(String revAuth, String body, int stars) {
+        Review newRev = new Review(revAuth, body, stars);
+
+
+        this.revList.add(newRev);// add the string review to the list
+        this.sumStars += stars;
+        this.numRevs++;
+
+        this.avgStar = this.avgStar(this.sumStars,this.numRevs);
     }
+    public double avgStar(int sum, int num){
+        double x = (double)sum / (double)num;
+        return x;
+    }
+
 
     public  String toString(){
         return String.format("the Restraunt name is %s the reating is %d  stars !!!! the price category is %d the review is %s" , this.name, this.stars, this.priceCat,this.revList);
