@@ -2,7 +2,7 @@ package Java.Fundamentals.Inheritance;
 
 import java.util.*;
 
-public class Restraunt {
+public class Restraunt implements Reviewable {
     String name;
     int numRevs;
     int sumStars;
@@ -53,4 +53,17 @@ public class Restraunt {
     }
 
 
+
+    @Override
+    public void newReview(String revAuth, String body, int stars) {
+        Review newRev = new Review(revAuth, body, stars);
+
+
+        this.revList.add(newRev);// add the string review to the list
+        this.sumStars += stars;
+        this.numRevs++;
+
+        this.avgStar = this.avgStar(this.sumStars,this.numRevs);
+
+    }
 }

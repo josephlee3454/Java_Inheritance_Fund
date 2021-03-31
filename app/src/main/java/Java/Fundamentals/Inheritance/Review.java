@@ -4,9 +4,9 @@ public class Review {
 
     public String revAuth;
     public int stars;
-    private String body;
+    public String body;
 
-    public Review( String revAuth, String body, int stars ){
+    public Review(String revAuth, String body, int stars ){
 
         this.revAuth = revAuth;
         this.stars = stars;
@@ -20,10 +20,10 @@ public class Review {
         return String.format(this.revAuth);
     }
 
-    public int getStars() {
-
-        return this.stars ;
-    }
+//    public int getStars() {
+//
+//        return (int) this.stars;
+//    }
     public String getBody(){
         return  this.body;
     }
